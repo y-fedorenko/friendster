@@ -45,6 +45,7 @@ html, body, main {
 }
 
 .centerized-wrapper {
+  display: flex;
   width: 80dvw;
   height: 80dvh;
   background-color: var(--color-white); 
@@ -93,4 +94,94 @@ h1, h1 + p {
   color: var(--color-white);
   font-family: var(--font-noto-sans-mono);
   cursor: default; /* this way no text cursor appears */
+}
+
+.right-section {
+  padding: 50px;
+}
+
+.right-section form {
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 28px;
+  font-family: var(--font-noto-sans-mono);
+}
+
+.input-group {
+  margin: 15px 0 0 0;
+}
+
+label {
+  display: flex;
+  flex: 1;
+  margin-bottom: 0px;
+}
+
+ input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-light-grey);
+  border-radius: var(--small-border-radius);
+}
+
+.checkbox-group {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+}
+
+.right-section input[type="checkbox"] {
+  margin-right: var(--small-border-radius);
+  height: 16px;
+  width: 16px;
+}
+
+.right-section button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border: 1px solid var(--color-blue);
+  border-radius: var(--small-border-radius);
+  cursor: pointer;
+  box-shadow:  -4px -4Px 8px var(--color-light-grey),
+             4px 4px 8px var(--color-white);
+}
+
+#sign-up {
+  margin-top: 20px;
+  color: var(--color-blue);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-blue);
+
+  &:hover {
+    background-color: var(--color-light-grey);
+    opacity: 1;
+  }
+}
+
+.social-login {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+  width: 100%;
+}
+
+.social-login button {
+  width: calc(50% - 10px);
+  background-color: #3b5998; 
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--small-border-radius);
+  cursor: pointer;
+}
+
+.social-login button.google-login {
+  background-color: #db4437; 
+}
+
+button:hover {
+  opacity: 0.8;
 }
