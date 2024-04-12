@@ -14,7 +14,8 @@
 }
 
 * {
-  font-family: 'Inter', sans-serif; /* remember to do some better font */
+  font-family: 'Inter', Arial, Helvetica, sans-serif; 
+  transition: all 0.25s ease-in-out;
 }
 
 html, body, main {
@@ -100,7 +101,7 @@ h1, h1 + p {
   padding: 50px;
 }
 
-.right-section form {
+.right-section .form {
   padding: 0 20px;
 }
 
@@ -178,10 +179,32 @@ label {
   cursor: pointer;
 }
 
-.social-login button.google-login {
+.social-login button.google {
   background-color: #db4437; 
 }
 
 button:hover {
   opacity: 0.8;
+}
+
+a {
+  margin-left: 20px;
+  color: var(--color-blue);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.incorrect-credentials {
+height: 60px;
+width: 320px;
+position: absolute;
+top: calc(50% - 30px);
+left: calc(50% - 160px);
+z-index: 4;
+background-color: var(--color-white);
+padding: 20px;
+border-radius: var(--small-border-radius);
+border: 1px solid var(--color-light-grey);
+text-align: center;
+display: none;
 }
