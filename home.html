@@ -13,8 +13,54 @@
     <script src="./src/scripts/home.js" defer></script> <!-- Make sure using the right link -->
   </head>
   <body>
+    <header>
+      <div class="container header">
+        <div class="logo">Friendster</div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search">
+          <button>Search</button>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#">My Friends</a></li>
+            <li><a href="#">Groups</a></li>
+            <li><a href="#">Messaging</a></li>
+            <li><a href="#">Me</a></li>
+          </ul>
+        </nav>
+        <div class="user-profile">
+          <!-- User profile information, e.g., profile picture, name, etc. -->
+          <img src="./src/media/void-user.png" alt="Profile Picture">
+        </div>
+      </div>
+    </header>
     <main>
-      
+      <div class="container flex space-between">
+        <aside id="left-sidebar">1</aside>
+        <section>
+          <div id="post-wall-wrapper">
+            <div class="input-wrapper">
+              <div class="content">
+                <textarea id="post-input" placeholder="What's on your mind?" class="fixed-size-textarea"></textarea>
+                <div class="input-area flex space-between">
+                  <div class="flex">
+                    <label for="image-input" class="image-label">
+                      <input type="file" id="image-input" class="image-input" accept="image/*">
+                      <span class="icon"><i class="fa-regular fa-image"></i></span>
+                    </label>   
+                    <p id="image-name"></p>
+                  </div>
+                  <input type='button' class="post-button" value='Post'>
+                </div>
+              </div>
+            </div>
+            <div id="post-wall">
+              <!-- posts -->
+            </div>
+          </div>
+        </section>
+        <aside id="right-sidebar">1</aside>
+      </div>
     </main>
   </body>
 </html>

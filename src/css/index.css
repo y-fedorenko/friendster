@@ -5,7 +5,7 @@
 :root {
   --color-blue: #3333ff;
   --color-white: #ffffff;
-  --color-light-grey: #dddddd;
+  --color-light-grey:  #f6f7f9;
   --color-grey: #777777;
   --color-black: #000000;
   --big-border-radius: 12px;
@@ -20,6 +20,7 @@
 
 html, body, main {
   height: 100%;
+  background-color: var(--color-light-grey);
 }
 
 .wrapper {
