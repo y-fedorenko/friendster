@@ -30,13 +30,26 @@
         </nav>
         <div class="user-profile">
           <!-- User profile information, e.g., profile picture, name, etc. -->
-          <img src="./src/media/void-user.png" alt="Profile Picture">
+          <img id="top-user-avatar" src="./src/media/void-user.png" alt="Profile Picture">
         </div>
       </div>
     </header>
     <main>
       <div class="container flex space-between">
-        <aside id="left-sidebar"></aside>
+        <aside id="left-sidebar">
+          <div class="user-info">
+            <div class="center">
+                <img id="selected-user-avatar" src="./src/media/void-user.png" alt="user">
+            </div>
+            <h1 id="selected-user-name">User Name</h1>
+            <p>Full-time student at mitt.ca</p>
+            <p id="selected-user-city">City</p>
+        </div>
+        <div class="user-stats flex space-between">
+            <div class="stat"><p>455</p> <p> friends</p></div>
+            <div class="stat"><p>102</p> <p> groups</p></div>
+        </div>
+        </aside>
         <section>
           <div id="post-wall-wrapper">
             <div class="input-wrapper">
@@ -73,7 +86,9 @@
               </div>
             </div>
         </section>
-        <aside id="right-sidebar"></aside>
+        <aside id="right-sidebar">
+          <div><h2>People you may know:</h2></div>
+        </aside>
       </div>
     </main>
   </body>

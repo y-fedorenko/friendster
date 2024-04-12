@@ -9,6 +9,10 @@ const postWall = document.querySelector('#post-wall');
 const imageInput = document.getElementById('image-input');
 const fileNameLabel = document.getElementById('image-name');
 const rightSidebar = document.querySelector('#right-sidebar');
+const userAvatar = document.querySelector('#selected-user-avatar');
+const userName = document.querySelector('#selected-user-name');
+const userCity = document.querySelector('#selected-user-city');
+const topAvatar = document.querySelector('#top-user-avatar');
 
 function addPost() {
   if (!(imageInput.files[0] || postInput.value)) return; // no input - do nothing
@@ -22,7 +26,7 @@ function addPost() {
     newDiv.innerHTML = `
     <div class="post-header">
      <div class="flex">
-        <img id ="avatar" src="./src/media/avatar.jpg" alt="avatar"> 
+        <img id ="avatar" src="./src/media/void-user.png" alt="avatar"> 
         <p>Placeholder for username</p></div>
         <p>${postDate.toLocaleDateString(
           'en-CA', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
@@ -64,7 +68,7 @@ const options = {
   mode: 'cors'
 }
 
-const URL = 'https://randomuser.me/api/?nat=CA&results=10&seed=same';
+const URLLink = 'https://randomuser.me/api/?nat=CA&results=11&seed=same';
 let users = [];
 
 async function getUsers(endPoint) {
@@ -79,25 +83,38 @@ async function getUsers(endPoint) {
     console.log(data.results);
     users = data.results;
     setSuggestionsContent();
-    
+    setUserInfo(data.results[0]);
   } catch (error) {
     console.log(error.message);
   }
 }
 
-window.addEventListener('load', getUsers(URL));
+window.addEventListener('load', getUsers(URLLink));
+
+function setUserInfo(user) {
+  userAvatar.src = user.picture.large;
+  userName.textContent = `${user.name.first} ${user.name.last}`;
+  userCity.textContent = user.location.city;
+  topAvatar.src = user.picture.large;
+}
 
 function setSuggestionsContent() {
   if (users.length === 0) return;
-  users.forEach((user) => {
+  users.slice(1).forEach((user) => {
     const newDiv = document.createElement('div');
     newDiv.innerHTML = `
-    <div class="suggestion">
-      <img id ="avatar" src="${user.picture.large}" alt="avatar"> 
-      <p>${user.name.first} ${user.name.last}</p>
-    </div>`;
+      <div class="suggestion-box">
+        <img id ="avatar" src="${user.picture.large}" alt="avatar"> 
+        <div class="suggestion-text">
+          <p>${user.name.first} ${user.name.last}</p>
+          <p>${user.location.city}</p>
+        </div>
+      </div>
+      <div class="post-add-suggestion">
+      <i class="fas fa-plus"></i>
+      </div>`;
     newDiv.classList.add('suggestion');
     const firstPost = rightSidebar.firstChild;
-    rightSidebar.insertBefore(newDiv, firstPost);
+    rightSidebar.appendChild(newDiv, firstPost);
   })
 }
