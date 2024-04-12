@@ -17,8 +17,8 @@
       <div class="container header">
         <div class="logo">Friendster</div>
         <div class="search-bar">
-          <input type="text" placeholder="Search">
-          <button>Search</button>
+          <input type="text" placeholder="">
+          <button class="search-button"><i class="fas fa-search"></i></button>
         </div>
         <nav class="nav">
           <ul>
@@ -36,7 +36,7 @@
     </header>
     <main>
       <div class="container flex space-between">
-        <aside id="left-sidebar">1</aside>
+        <aside id="left-sidebar"></aside>
         <section>
           <div id="post-wall-wrapper">
             <div class="input-wrapper">
@@ -56,10 +56,24 @@
             </div>
             <div id="post-wall">
               <!-- posts -->
+              <div class="post">
+                <div class="post-header">
+                 <div class="flex">
+                    <img id="avatar" src="./src/media/elon-avatar.jpg" alt="avatar"> 
+                    <p>Elon Musk</p></div>
+                    <p>Apr 11, 2024</p>
+                  </div>
+                  <div class="post-content">
+                    <p>Advertise on 𝕏</p>
+                    <div id="image-container">
+                      <img id="post-image" src="./src/media/post-image.jpeg" alt="image">
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
         </section>
-        <aside id="right-sidebar">1</aside>
+        <aside id="right-sidebar"></aside>
       </div>
     </main>
   </body>

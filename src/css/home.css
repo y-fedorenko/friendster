@@ -88,13 +88,16 @@ header {
 
 .search-bar input[type="text"] {
   padding: 5px;
-  border-radius: 5px;
   border: none;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+  border-bottom: var(--color-white) 2px solid;
+  line-height: 10px;
 }
 
 .search-bar button {
-  background-color: #ffffff;
-  color: #0077b5;
+  background-color: var(--color-blue);
+  color: var(--color-white);
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
@@ -241,6 +244,12 @@ input[type='button'] {
 
 img + p {
   margin-left: 10px;
+}
+
+#avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 #avatar + p {
